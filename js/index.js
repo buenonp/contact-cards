@@ -23,9 +23,9 @@
 
           );
           
-          //contactList.name = '';
-          //contactList.email = '';
-          //contactList.phone = '';
+          contactList.name = '';
+          contactList.email = '';
+          contactList.phone = '';
 
         };
 
