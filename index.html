@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html ng-app="ContactCards">
+
+  <head>
+    
+    <meta charset="UTF-8">
+
+    <title>Contact Cards</title>
+
+    <!-- Mobile -->
+    <meta name="viewport" 
+      content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+
+    <!-- Chrome / Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="theme-color" content="black">
+    <link rel="icon" href="icon.png">
+
+    <!-- Safari / iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link rel="stylesheet" 
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+    
+    <!-- CSS Imports -->
+    <link rel='stylesheet prefetch' 
+      href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.css'>
+    <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.0-rc4/docs.css'>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+
+  <body>
+
+    <div  
+      class="contactCards" 
+      ng-controller="ContactCardCtrl as contactList" >
+
+      <md-content
+        layout="column"
+        layout-align="center center"
+        class="md-padding">
+        
+        <header>
+          <md-list-item class="md-3-line form-contact contact-item">
+
+            <img 
+              ng-src="http://lorempixel.com/80/80/people/{{contactList.contacts.length}}" 
+              class="md-avatar">
+
+            <div class="md-list-item-text">
+              
+              <form ng-submit="contactList.addContact()">
+
+                <md-input-container>
+                  <label>Full Name</label>
+                  <input ng-model="contactList.name" type="text">
+                </md-input-container>
+
+                <md-input-container>
+                  <label>Email Address</label>
+                  <input ng-model="contactList.email" type="text">
+                </md-input-container>
+
+                <md-input-container>
+                  <label>Phone Number</label>
+                  <input ng-model="contactList.phone" type="text">
+                </md-input-container>
+
+                <md-button class="md-raised" type="submit"> 
+                  Save 
+                </md-button>
+
+              </form>
+
+            </div>
+
+          </md-list-item>
+        </header>
+
+        <section
+        layout="row" 
+        layout-align="center center">
+
+          <md-list layout-xs="column" class="grid">
+              
+            <md-list-item 
+              flex
+              layout-margin
+              layout-align="center center"
+              class="md-3-line contact-item" 
+              ng-repeat="contact in contactList.contacts">
+
+              <img 
+                ng-src="{{contact.image}}" 
+                class="md-avatar" 
+                alt="{{contact.name}}">
+
+              <div class="md-list-item-text">
+
+                <h3>{{contact.name}}</h3>
+                <p>{{contact.email}}</p>
+                <p>{{contact.phone}}</p>
+
+              </div>
+
+            </md-list-item>
+
+          </md-list>
+
+        </section>
+
+        <br>
+
+      </md-content>
+      
+    </div>
+    
+    <!-- Angular Denpendencies -->
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
+    <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.js'></script>
+    
+    <!-- Scripts -->
+    <script src="js/index.js"></script>
+
+  </body>
+
+</html>

@@ -1,0 +1,47 @@
+@media (min-width: 900px) {
+  .contactCards .grid {
+    width: 890px; 
+  }
+}
+
+.contactCards .form-contact {
+  padding-right: 7%;
+  padding-left: 7%;
+}
+
+.contactCards .contact-item {
+  box-sizing: border-box;
+  background: #eceff1;
+  min-width: 270px;
+  float: left;
+}
+  
+  .contactCards .contact-item .md-avatar {
+    width: 60px;
+    height: 60px; 
+  }
+
+  .contactCards .contact-item .md-list-item-text {
+    padding: 14px 0;
+    max-width: 190px; 
+  }
+
+    .contactCards .contact-item .md-list-item-text h3,
+    .contactCards .contact-item .md-list-item-text md-input-container {
+      margin: 0 !important;
+      padding: 0;
+      line-height: 1.2em !important; 
+    }
+
+    .contactCards .contact-item .md-list-item-text h3, 
+    .contactCards .contact-item .md-list-item-text p,
+    .contactCards .contact-item .md-list-item-text md-input-container {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden; 
+    }
+
+    .contactCards .contact-item .md-list-item-text md-input-container {
+      height: 30px; 
+    }
+
