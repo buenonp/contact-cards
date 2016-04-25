@@ -54,25 +54,58 @@
 
             <div class="md-list-item-text">
               
-              <form ng-submit="contactList.addContact()">
+              <form 
+                ng-submit="contactList.addContact()" 
+                name="formContact">
 
                 <md-input-container>
+                  
                   <label>Full Name</label>
-                  <input ng-model="contactList.name" type="text" required>
+
+                  <input 
+                    ng-model="contactList.name" 
+                    type="text" 
+                    name="inputName"
+                    required="">
+
+                  <div ng-messages="formContact.inputName.$error">
+                    <div ng-message="required">Name is required!</div>
+                  </div>
+
                 </md-input-container>
 
                 <md-input-container>
+                  
                   <label>Email Address</label>
-                  <input ng-model="contactList.email" type="email" required>
+
+                  <input 
+                    ng-model="contactList.email" 
+                    type="email" 
+                    name="inputEmail"
+                    required>
+
+                  <div ng-messages="formContact.inputEmail.$error">
+                    <div ng-message="required">Email is required!</div>
+                    <div ng-message="email">Insert a valid email address.</div>
+                  </div>
+
                 </md-input-container>
 
                 <md-input-container>
+                  
                   <label></label>
+                  
                   <input 
                     ng-model="contactList.phone" 
                     ui-mask="(999) 999-9999" 
                     type="text" 
+                    name="inputPhone"
                     required>
+
+                  <div ng-messages="formContact.inputPhone.$error">
+                    <div ng-message="required">Phone is required!</div>
+                  </div>
+               
                 </md-input-container>
 
                 <md-button class="md-raised" type="submit"> 
@@ -85,7 +118,7 @@
 
           </md-list-item>
         </header>
-
+        
         <section
         layout="row" 
         layout-align="center center">
