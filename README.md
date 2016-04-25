@@ -2,11 +2,11 @@
 - [x] Use Angular
 - [x] Width: 900px
 - [x] Responsiveness
-- [ ] Required entries
-- [ ] Email validation
-- [ ] Storage in the browser
+- [x] Required entries
+- [x] Email validation
+- [x] Storage in the browser
 
 ## Desirable
 - [ ] Photo upload
-- [ ] Phone mask
+- [x] Phone mask
 
