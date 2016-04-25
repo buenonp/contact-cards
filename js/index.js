@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-      .module('ContactCards',['ngMaterial', 'ui.mask'])
+      .module('ContactCards',['ngMaterial', 'ngMessages', 'ui.mask'])
       .controller('ContactCardCtrl', function () {
         
         var contactList = this;
