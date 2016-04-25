@@ -14,7 +14,6 @@
     <!-- Chrome / Android -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="theme-color" content="black">
-    <link rel="icon" href="icon.png">
 
     <!-- Safari / iOS -->
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -27,8 +26,7 @@
     
     <!-- CSS Imports -->
     <link rel='stylesheet prefetch' 
-      href='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.css'>
-    <link rel='stylesheet prefetch' href='https://material.angularjs.org/1.1.0-rc4/docs.css'>
+      href='bower_components/angular-material/angular-material.min.css'>
 
     <!-- Styles -->
     <link rel="stylesheet" href="css/style.css">
@@ -44,13 +42,14 @@
       <md-content
         layout="column"
         layout-align="center center"
+        ng-init="contactList.getAllContacts()"
         class="md-padding">
         
         <header>
           <md-list-item class="md-3-line form-contact contact-item">
 
             <img 
-              ng-src="http://lorempixel.com/80/80/people/{{contactList.contacts.length}}" 
+              ng-src="http://lorempixel.com/80/80/people" 
               class="md-avatar">
 
             <div class="md-list-item-text">
@@ -59,17 +58,21 @@
 
                 <md-input-container>
                   <label>Full Name</label>
-                  <input ng-model="contactList.name" type="text">
+                  <input ng-model="contactList.name" type="text" required>
                 </md-input-container>
 
                 <md-input-container>
                   <label>Email Address</label>
-                  <input ng-model="contactList.email" type="text">
+                  <input ng-model="contactList.email" type="email" required>
                 </md-input-container>
 
                 <md-input-container>
-                  <label>Phone Number</label>
-                  <input ng-model="contactList.phone" type="text">
+                  <label></label>
+                  <input 
+                    ng-model="contactList.phone" 
+                    ui-mask="(999) 999-9999" 
+                    type="text" 
+                    required>
                 </md-input-container>
 
                 <md-button class="md-raised" type="submit"> 
@@ -122,10 +125,12 @@
     </div>
     
     <!-- Angular Denpendencies -->
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js'></script>
-    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js'></script>
-    <script src='https://cdn.gitcdn.link/cdn/angular/bower-material/v1.1.0-rc4/angular-material.js'></script>
+    <script src='bower_components/angular/angular.min.js'></script>
+    <script src='bower_components/angular-animate/angular-animate.min.js'></script>
+    <script src='bower_components/angular-aria/angular-aria.min.js'></script>
+    <script src='bower_components/angular-material/angular-material.min.js'></script>
+    <script src='bower_components/angular-messages/angular-messages.min.js'></script>
+    <script src='bower_components/angular-ui-mask/dist/mask.min.js'></script>
     
     <!-- Scripts -->
     <script src="js/index.js"></script>
